@@ -37,10 +37,15 @@ body {
   margin: 80px 30px 10px 30px;
 }
 
+section {
+  margin: 30px;
+}
+
 h1 {
   color: var(--very-dark-blue);
   font-weight: 600;
   margin-bottom: 20px;
+  font-size: 300%;
 }
 
 h2 {
@@ -60,8 +65,8 @@ h2 {
 .panel-container {
   display: grid;
   gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: auto;
 }
 
 .panel {
@@ -87,5 +92,5 @@ h2 {
 }
 
 footer {
-  margin-top: 65px;
+  /* margin-top: 65px; */
 }
