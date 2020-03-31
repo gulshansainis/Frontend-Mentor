@@ -102,7 +102,19 @@ li:hover {
 }
 
 li.playing {
-  background-color: #333439;
+  position: relative;
+  background-color: transparent;
+  border-right: 5px solid #70d18c;
+}
+
+[data-progress]:after {
+  content: "\A";
+  position: absolute;
+  background: #70d18c;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(attr(data-progress) + "px");
 }
 
 li span {

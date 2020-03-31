@@ -170,6 +170,21 @@ const initialize = () => {
     player.load();
   };
   loadDefaultMedia();
+
+  window.addEventListener("load", event => {
+    player.addEventListener("play", e => {
+      player.volume = 0.2;
+
+      player.addEventListener("progress", e => {
+        // console.log(player.duration);
+        const progress = ((player.currentTime / player.duration) * 100).toFixed(
+          2
+        );
+        const progressBar = playlist.querySelector(".playing");
+        progressBar.setAttribute("data-progress", progress);
+      });
+    });
+  });
 };
 
 initialize();
